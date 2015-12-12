@@ -1,0 +1,14 @@
+---
+# file: roles/monitoring/tasks/main.yml
+# description: Use munin for monitoring
+
+- name: Install munin node
+  apt: name=munin-node
+       state=present
+
+- name: Copy configuration files
+  copy: src=munin-node.conf
+        dest=/etc/munin/munin-node.conf
+        owner=root
+        group=root
+        mode=0644

@@ -1,0 +1,55 @@
+---
+# file: /roles/huwyler-backup/task/main.yml
+
+- name: Install rsnapshot
+  apt: name=rsnapshot
+       state=present
+
+- name: Create mount point
+  file: path=/var/data/huwyler
+        state=directory
+        owner=sysadmin
+        group=root
+        mode=0770
+
+# TODO set chattr +i
+
+- name: Mount backup drive
+  mount: name=/var/data/huwyler
+         src='LABEL=huwyler'
+         fstype=ext4
+         state=mounted
+
+- name: ":Copy rsnapshot config"
+  copy: src=rsnapshot_huwyler.conf
+        dest=/etc/rsnapshot_huwyler.conf
+        owner=root
+        group=root
+        mode=644
+
+- name: "Copy rsnaphsot startup wrapper"
+  copy: src=backup_huwyler
+        dest=/usr/local/sbin/backup_huwyler
+        owner=root
+        group=root
+        mode=755
+
+- name: "Set cronjob: Backup daily"
+  cron: name="Huwyler backup daily"
+        minute="0"
+        hour="22"
+        job="/usr/local/sbin/backup_huwyler daily"
+
+- name: "Set cronjob: Backup weekly"
+  cron: name="Huwyler backup daily"
+        minute="15"
+        hour="0"
+        weekday="1"
+        job="/usr/local/sbin/backup_huwyler weekly"
+
+- name: "Set cornjob: Backup monthly"
+  cron: name="Huwyler backup daily"
+        minute="30"
+        hour="0"
+        day="1"
+        job="/usr/local/sbin/backup_huwyler monthly"
