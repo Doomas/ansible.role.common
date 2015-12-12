@@ -41,14 +41,14 @@
         job="/usr/local/sbin/backup_huwyler daily"
 
 - name: "Set cronjob: Backup weekly"
-  cron: name="Huwyler backup daily"
+  cron: name="Huwyler backup weekly"
         minute="15"
         hour="0"
         weekday="1"
         job="/usr/local/sbin/backup_huwyler weekly"
 
 - name: "Set cornjob: Backup monthly"
-  cron: name="Huwyler backup daily"
+  cron: name="Huwyler backup monthly"
         minute="30"
         hour="0"
         day="1"
