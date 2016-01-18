@@ -4,5 +4,5 @@
 # Small wrapper to invoke rsnapshot for the huwyler remote backup
 
 echo "Huwyler rsnapshot $1"
-/usr/bin/rsnapshot -c /etc/rsnapshot_huwyler.conf daily
+/usr/bin/rsnapshot -c /etc/rsnapshot_huwyler.conf $1
 echo
