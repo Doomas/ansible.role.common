@@ -2,5 +2,5 @@
 # file: site.yml
 - include: backup_server.yml
 - include: control_server.yml
-#- include: web_server.yml
+- include: web_server.yml
 

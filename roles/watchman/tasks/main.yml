@@ -1,0 +1,14 @@
+---
+# File: 	    roles/watchman/tasks/main.yml
+# Created:	    09.05.2016
+# Description:  Installation of watchman
+# Author: 	    Thomas Galliker
+# Email:	    mail@thomasgalliker.net
+
+- name: "Make sure follwing packages are present"
+  become: yes
+  apt: name={{ item }}
+       state=present
+  with_items: 
+    - autoconf
+    - automake

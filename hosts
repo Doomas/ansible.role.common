@@ -1,2 +1,11 @@
+[command-control-server]
+srv-virt-05
+
 [backup-server]
 srv-virt-06
+
+[webserver]
+srv-virt-03
+
+[thomas]
+pc-lh7-01

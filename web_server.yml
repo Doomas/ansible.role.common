@@ -8,9 +8,10 @@
   roles:
     - common
     - monitoring
+    - mysql-server
 
-- name: Config Owncloud
-  hosts: owncloud-server
-  sudo: yes
-  roles:
-    - owncloud-server
+#- name: Config Owncloud
+#  hosts: owncloud-server
+#  sudo: yes
+#  roles:
+#    - owncloud-server

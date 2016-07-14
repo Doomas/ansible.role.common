@@ -2,7 +2,7 @@
 # file: control_server.yml
 
 - name: Basic config Backupserver
-  hosts: control-server
+  hosts: command-control-server
   user: sysadmin
   sudo: yes
   roles:

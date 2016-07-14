@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ANSIBLE_ENV_PATH=/opt/ansible/bin
+ANSIBLE_PLAYBOOK=/$ANSIBLE_ENV_PATH/ansible-playbook
