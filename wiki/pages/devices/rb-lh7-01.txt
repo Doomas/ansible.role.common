@@ -1,0 +1,51 @@
+====== rb-lh7-01 ======
+
+| Modell | Raspberry Pi 3 Model B |
+| Standort | |
+|Betriebsystem | Raspian 8 |
+
+
+===== Hardware Konfiguration =====
+
+[[http://razberry.z-wave.me|Razberry Z-Wave Modul]] auf den Pins 0 .. 10
+
+
+===== Konfiguration =====
+
+==== Razberry ====
+
+Das Razberry Modul funktionierte zuerst nicht. Folgendes wurde Konfiguriert. Nach folgendem [[https://community.home-assistant.io/t/unable-to-configure-razberry-board-with-openzwave/4686|Forumeintrag]]
+
+<code>
+Hi,
+
+If you are using a PI3 with raZberry gpio mudule the onboard bluetooth and raZberry will try to use the same serial port.
+If I remember right you get this message in this case.
+
+This is how I solved it(not sure every thing is needed), this will disable bluetooth.
+
+    Add the user running Home Assistant to the group "dialout"
+
+    Edit /boot/config.txt. Add this:
+    Core_freq=250
+    dtoverlay=pi3-disable-bt
+    enable_uart=1
+
+    Edit /boot/cmdline.txt. Remove this from the row
+    console=serial0,115200 console=tty1
+
+    Reboot
+
+I'm not sure that you have to change Core_freq when switching to uart 1
+I'd also run rpi-update(might not be necessary)
+</code>
+
+
+
+===== Protokoll =====
+
+==== 01.11.2016 ====
+
+  * Unordered List ItemNeusinstallation Raspian.
+  * Unordered List ItemInstallation Home Assistant [[https://home-assistant.io/getting-started/installation-raspberry-pi-all-in-one/|All-In-One Installer]]
+
