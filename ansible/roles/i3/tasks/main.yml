@@ -1,0 +1,14 @@
+---
+# File: 	roles/i3/tasks/main.yml
+# Created:	03.05.2016
+# Description:  Configuration of Python for development
+# Author: 	Thomas Galliker
+# Email:	mail@thomasgalliker.net
+
+- name: "Make sure follwing packages are present"
+  become: yes
+  apt: name={{ item }}
+       state=present
+  with_items:
+    - xorg
+    - i3

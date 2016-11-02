@@ -1,0 +1,22 @@
+---
+# file: /roles/owncloud-backup/task/main.yml
+
+- name: Install rsnapshot
+  apt: name=rsnapshot
+       state=present
+
+- name: Create mount point
+  file: path=/media/backup
+        state=directory
+        owner=sysadmin
+        group=root
+        mode=0770
+
+# TODO set chattr +i
+
+- name: ":Copy rsnapshot config"
+  copy: src=rsnapshot_owncloud.conf
+        dest=/etc/rsnapshot_owncloud.conf
+        owner=root
+        group=root
+        mode=644

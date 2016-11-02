@@ -1,0 +1,27 @@
+---
+# File: 	roles/python/tasks/main.yml
+# Created:	03.05.2016
+# Description:  Configuration of Python for development
+# Author: 	Thomas Galliker
+# Email:	mail@thomasgalliker.net
+
+- name: "Make sure follwing packages are present"
+  become: yes
+  apt: name={{ item }}
+       state=present
+  with_items:
+   - python-setuptools
+   - python-virtualenv
+
+
+- name: "Packages needed to install Ansible 2 inside Virtualenv"
+  become: yes
+  apt: name={{ item }}
+       state=present
+  with_items:
+    - python-virtualenv
+    - gcc
+    - python-dev
+    - libffi-dev
+    - libssl-dev
+

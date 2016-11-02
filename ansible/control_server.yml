@@ -1,0 +1,12 @@
+---
+# file: control_server.yml
+
+- name: Basic config Backupserver
+  hosts: command-control-server
+  user: sysadmin
+  sudo: yes
+  roles:
+    - common
+    - monitoring
+    - unifi-controller
+

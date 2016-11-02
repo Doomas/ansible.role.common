@@ -1,0 +1,17 @@
+---
+# file: webserver.yml
+
+- name: Config Webserver
+  hosts: webserver
+  user: sysadmin
+  sudo: yes
+  roles:
+    - common
+    - monitoring
+    - mysql-server
+
+#- name: Config Owncloud
+#  hosts: owncloud-server
+#  sudo: yes
+#  roles:
+#    - owncloud-server
