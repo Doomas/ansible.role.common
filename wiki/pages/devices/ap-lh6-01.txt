@@ -1,3 +1,4 @@
 ====== ap-lh6-01 ======
 
 location: LH6, W2 (Alex)
+mac: 80:2a:a8:49:e3:b6
