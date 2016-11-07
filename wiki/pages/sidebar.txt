@@ -2,4 +2,7 @@
   * [[network:192-168-1|192.168.1.0/24]]
 
 
+** [[inventory:start|Inventar]] **
+  * [[inventory:ap |Access Points]] 
+
 ** [[harddisks:start|Festplatten]] **
