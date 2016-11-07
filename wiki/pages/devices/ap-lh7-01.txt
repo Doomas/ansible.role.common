@@ -1,0 +1,14 @@
+====== ap-lh7-01 ======
+
+----dataentry device----
+model             : UniFi AP LR
+serialNumber      :
+user              :
+location          : location: LH7, EG, Büro
+operatingSystem   :
+ip                :
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====
