@@ -1,4 +1,15 @@
 ====== ap-lh6-01 ======
 
-location: LH6, W2 (Alex)
-mac: 80:2a:a8:49:e3:b6
+----dataentry device----
+model             : UniFi AP Lite
+serialNumber      :
+user              :
+location          : LH6, W2 (Alex)
+operatingSystem   :
+ip                : 192.168.1.22
+mac               : 80:2a:a8:49:e3:b6
+legacyName        :
+----
+
+
+===== Protokoll =====
