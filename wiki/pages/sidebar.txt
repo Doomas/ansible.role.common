@@ -8,4 +8,5 @@
 ** [[harddisks:start|Festplatten]] **
 
 ** [[documentation:start|Dokumentation]] **
+  * [[documentation:acronyms|Abkürzungen]]
   * [[documentation:devices|Geräte]]
