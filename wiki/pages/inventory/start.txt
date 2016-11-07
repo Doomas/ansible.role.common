@@ -1,1 +1,8 @@
 ====== Inventar ======
+
+---- datatable ----
+cols    : %pageid%, legacyName, location
+headers : Details, alter Name, Standort
+filter  : %pageid%*~devices:
+sort    : %pageid%
+----
