@@ -6,3 +6,6 @@
   * [[inventory:ap |Access Points]] 
 
 ** [[harddisks:start|Festplatten]] **
+
+** [[documentation:start|Dokumentation]]
+  * [[documentation:devices|Geräte]]
