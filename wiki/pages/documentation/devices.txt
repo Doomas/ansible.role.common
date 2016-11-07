@@ -1,0 +1,20 @@
+====== Dokumentation von Geräten ======
+
+
+<code>
+====== ger-äte-name ======
+
+----dataentry device----
+model             :
+serialNumber      :
+user              :
+location          :
+operatingSystem   :
+ip                :
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====
+
+</code>
