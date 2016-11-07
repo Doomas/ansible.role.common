@@ -1,4 +1,14 @@
 ====== ap-lh6-02 ======
 
+----dataentry device----
+model             :
+serialNumber      :
+user              :
+location          : location: LH6, W4 (Paps)
+operatingSystem   :
+ip                :
+mac               :
+legacyName        :
+----
 
-location: LH6, W4 (Paps)
+===== Protokoll =====
