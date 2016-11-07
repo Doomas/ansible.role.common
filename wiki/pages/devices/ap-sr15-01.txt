@@ -1,0 +1,14 @@
+====== ap-sr15-01 ======
+
+----dataentry device----
+model             : UniFi AP
+serialNumber      :
+user              :
+location          : location: SR15, EG, Wohnzimmer
+operatingSystem   :
+ip                :
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====
