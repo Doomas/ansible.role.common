@@ -4,6 +4,7 @@
 
 ** [[inventory:start|Inventar]] **
   * [[inventory:ap |Access Points]] 
+  * [[inventory:prt |Drucker]] 
 
 ** [[harddisks:start|Festplatten]] **
 
