@@ -1,0 +1,9 @@
+====== Raspberry Pi: Lindenhof ======
+
+
+---- datatable ----
+cols    : %pageid%, legacyName, location
+headers : Details, alter Name, Standort
+filter  : %pageid%*~rb-
+sort    : %pageid%
+----
