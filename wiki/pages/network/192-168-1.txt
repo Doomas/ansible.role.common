@@ -7,6 +7,6 @@
 ---- datatable ----
 cols    : %pageid%, legacyName, location
 headers : Details, alter Name, Standort
-filter  : %ip%*~192.168.1.
-sort    : %ip%
+filter  : ip*~192.168.1.
+sort    : ip
 ----
