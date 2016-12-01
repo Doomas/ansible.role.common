@@ -5,6 +5,7 @@
 ** [[inventory:start|Inventar]] **
   * [[inventory:ap |Access Points]] 
   * [[inventory:prt |Drucker]] 
+  * [[inventory:rb |Raspberry Pi]] 
 
 ** [[harddisks:start|Festplatten]] **
 
