@@ -1,0 +1,18 @@
+====== srv-virt-03 ======
+
+----dataentry device----
+model             : KVM Guest
+serialNumber      :
+user              :
+location          : srv-lhf-001
+operatingSystem   :
+ip                : 192.168.1.15
+mac               :
+legacyName        :
+----
+
+===== Funktion =====
+
+Nextcloud Server für safier.lhof.ch
+
+===== Protokoll =====
