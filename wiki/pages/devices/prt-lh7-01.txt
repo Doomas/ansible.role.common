@@ -1,0 +1,18 @@
+====== prt-lh7-01 ======
+
+----dataentry device----
+model             : Canon MF8230cn
+serialNumber      :
+user              :
+location          : LH7, EG, Büro
+operatingSystem   :
+ip                : 192.168.1.200
+mac               :
+legacyName        :
+----
+
+===== Verbrauchsmaterial =====
+
+Cartrige 731: H BK, BK, Y, M, C
+
+===== Protokoll =====

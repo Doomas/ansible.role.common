@@ -1,0 +1,7 @@
+====== Abkürzung ======
+
+In der Dokumentation verwendete Abkürzugen.
+
+| lh6 | Haus Lindenhofweg 6 |
+| lh7 | Haus Lindenhofweg 7 |
+| sr15 | Haus Sonnrain 15 |

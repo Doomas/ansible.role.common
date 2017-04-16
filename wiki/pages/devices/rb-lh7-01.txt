@@ -1,8 +1,15 @@
 ====== rb-lh7-01 ======
 
-| Modell | Raspberry Pi 3 Model B |
-| Standort | |
-|Betriebsystem | Raspian 8 |
+----dataentry device----
+model             : Raspberry Pi 3 Model B
+serialNumber      :
+user              :
+location          :
+operatingSystem   : Raspian 8
+ip                : 192.168.1.31
+mac               :
+legacyName        :
+----
 
 
 ===== Hardware Konfiguration =====
@@ -46,6 +53,6 @@ I'd also run rpi-update(might not be necessary)
 
 ==== 01.11.2016 ====
 
-  * Unordered List ItemNeusinstallation Raspian.
-  * Unordered List ItemInstallation Home Assistant [[https://home-assistant.io/getting-started/installation-raspberry-pi-all-in-one/|All-In-One Installer]]
+  * ItemNeusinstallation Raspian.
+  * ItemInstallation Home Assistant [[https://home-assistant.io/getting-started/installation-raspberry-pi-all-in-one/|All-In-One Installer]]
 

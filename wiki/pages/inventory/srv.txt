@@ -1,0 +1,15 @@
+====== Server: Lindenhof ======
+
+
+---- datatable ----
+cols    : %pageid%, legacyName, location
+headers : Details, alter Name, Standort
+filter  : %pageid%*~srv-
+sort    : %pageid%
+----
+
+
+
+===== In Planung =====
+
+  * srv-vir-008: Backup Server Baeros

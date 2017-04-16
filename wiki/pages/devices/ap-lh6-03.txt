@@ -1,0 +1,14 @@
+====== ap-lh6-03 ======
+
+----dataentry device----
+model             :
+serialNumber      :
+user              :
+location          : location: LH6, W1 (Soe)
+operatingSystem   :
+ip                :
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====

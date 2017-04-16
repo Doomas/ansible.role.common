@@ -1,3 +1,12 @@
 ====== 192.168.1.0/24 ======
 
 | 192.168.1.31 | [[devices:rb-lh7-01]] |
+====== Drucker: Lindenhof ======
+
+
+---- datatable ----
+cols    : ip, %pageid%, legacyName, location
+headers : IP Adresse, Details, alter Name, Standort
+filter  : ip*~192.168.1.
+sort    : ip
+----
