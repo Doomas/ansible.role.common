@@ -1,0 +1,14 @@
+---
+# File:        roles/common-server-deb9/tasks/main.yml
+# Created:     15.04.201r76
+# Description: Common 
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+
+- name: "Interface configuration"
+  become: true
+  template: src=interfaces.j2
+            dest=/etc/network/interfaces
+            owner=root
+            group=root
+            mode=0644
