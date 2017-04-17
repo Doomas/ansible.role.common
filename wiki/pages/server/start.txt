@@ -1,0 +1,11 @@
+====== Server ======
+
+
+Default virtual Server config
+
+Disk config
+
+| root | 8GB |
+| home | 4GB |
+| var | 8GB |
+| swap | 4GB |
