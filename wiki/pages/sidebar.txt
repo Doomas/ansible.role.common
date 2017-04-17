@@ -10,6 +10,8 @@
 
 ** [[harddisks:start|Festplatten]] **
 
+** [[server:start|Server]]**
+
 ** [[documentation:start|Dokumentation]] **
   * [[documentation:acronyms|Abkürzungen]]
   * [[documentation:devices|Geräte]]
