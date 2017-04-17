@@ -1,0 +1,14 @@
+====== srv-lh7-002 ======
+
+----dataentry device----
+model             : Custom Server
+serialNumber      :
+user              :
+location          :
+operatingSystem   : Debian Strech, 9.x
+ip                : 10.111.011.12
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====
