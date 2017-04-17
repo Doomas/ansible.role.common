@@ -14,6 +14,8 @@ Default virtual Server config
 
 ===== Bootstrap Ansible =====
 
+Login as ''root'' und folgende Befehle ausführen
+
   apt-get update && apt-get upgrade
 
   apt-get install sudo python aptitude
