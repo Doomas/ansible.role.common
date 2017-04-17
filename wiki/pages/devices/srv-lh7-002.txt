@@ -6,7 +6,7 @@ serialNumber      :
 user              :
 location          :
 operatingSystem   : Debian Strech, 9.x
-ip                : 10.111.011.12
+ip                : 10.111.011.012
 mac               :
 legacyName        :
 ----
