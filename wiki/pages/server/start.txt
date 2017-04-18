@@ -1,0 +1,23 @@
+====== Server ======
+
+
+Default virtual Server config
+
+
+===== Disk config =====
+
+| root | 8GB |
+| home | 4GB |
+| var | 8GB |
+| swap | 4GB |
+
+
+===== Bootstrap Ansible =====
+
+Login as ''root'' und folgende Befehle ausführen
+
+  apt-get update && apt-get upgrade
+
+  apt-get install sudo python aptitude
+
+  usermod -a -G sudo sysadmin
