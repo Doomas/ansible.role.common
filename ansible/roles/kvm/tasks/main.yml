@@ -1,0 +1,58 @@
+---
+
+- name: "Install kvm and libvirt"
+  become: yes
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+    - qemu-kvm
+    - libvirt-daemon-system
+    - python-libvirt
+    - python-lxml
+
+- name: "Add sysadmin to libvirt and kvm group"
+  become: true
+  user: name=sysadmin 
+        groups=kvm,libvirt
+        append=yes
+
+
+- name: "Make sure all Volume Groups are present"
+  become: yes
+  lvg:
+      vg: "{{ item.name }}"
+      pvs: "{{ item.devices | map(attribute='path') | join(',') }}"
+  with_items: "{{ kvm_storage_pools }}"
+
+
+# Define a new storage pool
+- name: "Define storage pools"
+  virt_pool:
+     command: define
+     name: "{{ item.name }}"
+     xml: '{{ lookup("template", "storage.xml.j2") }}'
+  with_items: "{{ kvm_storage_pools }}"
+
+
+
+# Build a storage pool if it does not exist
+#- name: "Build storage pools"
+#  virt_pool:
+#     command: build
+#     name: "{{ item.name }}"
+#  with_items: "{{ kvm_storage_pools }}"
+
+
+- name: "Set storage pools active"
+  virt_pool:
+     state: active
+     name: "{{ item.name }}"
+  with_items: "{{ kvm_storage_pools }}"
+
+- name: "Set autostart for storage pools"
+  virt_pool:
+     autostart: yes
+     name: "{{ item.name }}"
+  with_items: "{{ kvm_storage_pools }}"
+
