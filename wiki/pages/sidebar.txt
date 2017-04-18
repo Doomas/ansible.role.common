@@ -12,6 +12,7 @@
 ** [[harddisks:start|Festplatten]] **
 
 ** [[server:start|Server]]**
+  * [[server:road-map|Planung]]
 
 ** [[documentation:start|Dokumentation]] **
   * [[documentation:acronyms|Abkürzungen]]
