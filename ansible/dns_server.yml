@@ -1,0 +1,13 @@
+---
+# File:        dns_server.yml
+# Created:     18.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Playbook to config dns Server
+
+- name: "DNS Server configuration"
+  hosts: dns-server
+  roles:
+    - common
+    - common-server
+    - bind

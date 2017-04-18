@@ -1,0 +1,6 @@
+---
+interfaces_ipv4:
+    - name: eth0
+      address: 10.111.11.27
+      netmask: 255.255.255.0
+      gateway: 10.111.11.1

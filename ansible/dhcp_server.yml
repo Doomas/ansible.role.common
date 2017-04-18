@@ -1,0 +1,13 @@
+---
+# File:        dhcp_server.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Playbook to config dhcp server
+
+- name: "KVM Server configuration"
+  hosts: dhcp-server
+  roles:
+    - common
+    - common-server
+    - isc-dhcp-server

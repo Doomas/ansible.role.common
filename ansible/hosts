@@ -1,3 +1,12 @@
+[kvm-server]
+srv-lh7-002
+
+[dhcp-server]
+srv-vir-001
+
+[dns-server]
+srv-vir-001
+
 [command-control-server]
 srv-vir-007
 
