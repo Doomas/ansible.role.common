@@ -1,0 +1,37 @@
+---
+# File:        roles/isc-dhcp-server/tasks/main.yml
+# Created:     17.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Install ISC dhcp server
+
+
+- name: "Install isc-dhcp-server"
+  become: true
+  apt:
+      name: isc-dhcp-server
+      state: present
+
+- name: "DHCPD Configuraiton"
+  become: true
+  template:
+      src: dhcpd.conf.j2
+      dest: /etc/dhcp/dhcpd.conf
+      owner: root
+      group: root
+      mode: 0644
+  notify:
+    - restart dhcp
+
+
+- name: "Configure dhcp"
+  become: true
+  template:
+      src: isc-dhcp-server.j2
+      dest: /etc/default/isc-dhcp-server
+      owner: root
+      group: root
+      mode: 0644
+  notify:
+    - restart dhcp
+

@@ -1,0 +1,31 @@
+# Config file generatet with Ansible
+
+option domain-name "{{ lindenhof_default_domain_name }}";
+option domain-name-servers {{ lindenhof_default_domain_name_servers | map(attribute='ip') | join(' ') }};
+
+default-lease-time 600;
+max-lease-time 7200;
+
+ddns-update-style none;
+
+{% if dhcp_zones is defined %}
+{% for zone in dhcp_zones %}
+subnet {{ zone.subnet }} netmask {{ zone.netmask }} {
+        interface {{ zone.interface }};
+        range {{ zone.range }};
+        option broadcast-address {{ zone.broadcast }};
+        option routers {{ zone.routers }};
+        option domain-name-servers {{ zone.domain_name_servers }};
+        option domain-name "{{ zone.domain_name }}";
+}
+{% endfor %}
+{% endif %}
+
+{% if dhcp_hosts is defined %}
+{% for host in dhcp_hosts %}
+        host {{ host.name }} {
+                hardware ethernet {{ host.mac }};
+                fixed-address {{ host.ip }};
+        }
+{% endfor %}
+{% endif %}
