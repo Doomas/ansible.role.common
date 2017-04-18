@@ -1,7 +1,20 @@
 ---
 # file: roles/common/tasks/main.yml
+#
 
-- name: Install common administrativ tools
+- name: "Make sure aptitude is installed"
+  become: yes
+  apt: name=aptitude 
+       state=present
+
+- name: "Update chache"
+  become: yes
+  apt: update_cache=yes
+       upgrade=safe
+       cache_valid_time=3600
+
+- name: "Install common administrativ tools"
+  become: yes
   apt: name={{ item }} state=present
   with_items:
     - vim
