@@ -1,0 +1,12 @@
+---
+# File:        roles/bind/handlers/main.yml
+# Created:     17.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Handlers for bind service
+
+- name: restart dns
+  become: yes
+  service:
+    name: bind9
+    state: restarted

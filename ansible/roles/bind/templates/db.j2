@@ -1,0 +1,24 @@
+;File:        roles/bind/templates/named.conf.local.j2
+;Created:     17.04.2017
+;Author:      Thomas Galliker
+;Email:       mail@thomasgalliker.net
+;Description: Zone file generate by Ansible for zone {{ item.name }}
+
+$ORIGIN {{ item.name }}.
+$TTL 3600       ; 1 hour
+@    IN    SOA    {{ item.primary_dns }}.    root.lhof.ch. (
+                  {{ item.serial }} ; serial
+                  3600       ; refresh (1 hour)
+                  600        ; retry (10 minutes)
+                  86400      ; expire (1 day) 
+                  600 )      ; minimum (10 minutes)
+                                
+; main domain name server
+     IN    NS    {{ item.primary_dns }}.
+
+; A records for name servers
+{% if item.a_records is defined %}
+{% for record in item.a_records %}
+{{ record.host }}    IN    A    {{ record.ip }}
+{% endfor %}
+{% endif %}
