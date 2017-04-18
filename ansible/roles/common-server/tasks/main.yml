@@ -1,0 +1,27 @@
+---
+# File:        roles/common-server/tasks/main.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Common server configuration
+
+- name: "Add the sysadmins ssh key to the autorized keys for passwordless login"
+  authorized_key: 
+      user=sysadmin
+      key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+- name: "Install bridge-utils if bridge is defined"
+  become: true
+  apt:
+      name: bridge-utils
+      state: present
+  when: interfaces_bridge is defined
+
+- name: "Configure interfaces"
+  become: true
+  template:
+      src: interfaces.j2
+      dest: /etc/network/interfaces
+      owner: root
+      group: root
+      mode: 0644
