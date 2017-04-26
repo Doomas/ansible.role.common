@@ -1,0 +1,12 @@
+---
+# File:        roles/apache2/handlers/main.yml
+# Created:     17.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Handlers for apache2 service
+
+- name: restart apache2
+  become: yes
+  service:
+    name: apache2
+    state: restarted
