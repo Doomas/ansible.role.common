@@ -8,6 +8,5 @@
 - name: "DNS Server configuration"
   hosts: dns-server
   roles:
-    - common
-    - common-server
     - bind
+  tags: dns

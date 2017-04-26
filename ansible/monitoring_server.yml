@@ -1,0 +1,15 @@
+---
+# File:        monitoring_server.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Playbook to config monitoring server
+
+- name: "Incinga2 Master configuration"
+  hosts: icinga2-master
+  roles:
+    - icinga2 
+    - postgresql
+    - apache2
+    - icinga2-web
+  tags: monitoring

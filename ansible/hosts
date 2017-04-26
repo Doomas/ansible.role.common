@@ -1,3 +1,8 @@
+[server]
+srv-lh7-002
+srv-vir-001
+srv-vir-005
+
 [kvm-server]
 srv-lh7-002
 
@@ -6,6 +11,9 @@ srv-vir-001
 
 [dns-server]
 srv-vir-001
+
+[icinga2-master]
+srv-vir-005
 
 [command-control-server]
 srv-vir-007

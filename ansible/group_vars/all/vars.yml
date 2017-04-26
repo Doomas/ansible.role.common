@@ -20,3 +20,8 @@ lindenhof_default_domain_name_servers:
 default_pxe_server: 192.168.1.10
 default_pxe_filname: pxelinux.0
 
+# Postgres
+postgres_default_user: postgres
+postgres_admin_user: thomas
+postgres_admin_password: "{{ vault_postgres_admin_password }}"
+

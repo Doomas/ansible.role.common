@@ -8,6 +8,5 @@
 - name: "KVM Server configuration"
   hosts: kvm-server
   roles:
-    - common
-    - common-server
     - kvm
+  tags: kvm
