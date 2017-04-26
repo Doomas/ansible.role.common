@@ -1,0 +1,31 @@
+---
+# File:        roles/incinga2/tasks/main.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Incinga server configuration
+
+- name: "Ensure Incinga apt key is present"
+  become: yes
+  apt_key:
+      url: "https://packages.icinga.com/icinga.key"
+      state: present
+
+
+- name: "Ensure Incinga source is present"
+  become: yes
+  apt_repository:
+      repo: "deb https://packages.icinga.com/debian icinga-jessie main"
+      state: present
+      filename: 'incinga'
+      update_cache: yes
+
+- name: "Ensure incinga2 is installed"
+  become: yes
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+      - icinga2
+      - nagios-plugins
+
