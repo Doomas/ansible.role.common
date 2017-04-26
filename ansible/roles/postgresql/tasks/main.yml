@@ -1,0 +1,38 @@
+---
+# File:        roles/postgresql/tasks/main.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Postgesql
+
+
+- name: "Ensure all components for postgresql are installed"
+  become: yes
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+      - postgresql
+      - python-psycopg2
+
+
+- name: "Setup hba config"
+  become: yes
+  template:
+      src: pg_hba.conf.j2
+      dest: /etc/postgresql/9.4/main/pg_hba.conf
+      owner: postgres
+      group: postgres
+      mode: 0640
+  notify:
+    - restart postgresql
+
+  
+- name: "Make sure the default superadmin is present"
+  become: yes
+  become_user: "{{ postgres_default_user }}"
+  postgresql_user:
+      name: "{{ postgres_admin_user }}"
+      password: "{{ postgres_admin_password }}"
+      role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+
