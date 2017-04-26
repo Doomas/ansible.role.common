@@ -1,0 +1,11 @@
+---
+
+icinga_postgres_user: icinga
+icinga_postgres_password: aklUdk73-38Jhdlk3j4
+icinga_db_name: icinga
+icinga_db_schema: /usr/share/icinga2-ido-pgsql/schema/pgsql.sql
+
+icingaweb_postgres_user: icingaweb
+icingaweb_postgres_password: Ijdkfj9872jdki-ad8f
+icingaweb_db_name: icingaweb
+icingaweb_db_schema: /usr/share/icingaweb2/etc/schema/pgsql.schema.sql
