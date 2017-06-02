@@ -1,0 +1,13 @@
+---
+# File: ssh.yml
+- name: Add the sysadmins ssh key to the autorized keys 
+  authorized_key: user={{ ssh_user }}
+                  key="{{ lookup('file', 'id_rsa.sysadmin.pub') }}"
+  tags: init
+
+- name: Copy SSH private key for passwordless login
+  copy: src=id_rsa.private
+        dest=/root/id_rsa.private 
+        owner=root 
+        group=root
+        mode=600

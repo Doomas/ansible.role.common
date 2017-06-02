@@ -1,0 +1,66 @@
+---
+# File:        roles/common/tasks/main.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Host variables for srv-vir-010
+
+
+- name: "Add the sysadmins ssh key to the autorized keys for passwordless login"
+  authorized_key: 
+        user: sysadmin
+        key: "{{ lookup('file', 'id_rsa.pub') }}"
+
+
+- name: "Ensure common system administraton tools are installed"
+  become: true
+  apt: 
+      name: "{{ item }}"
+      state: present
+  with_items:
+      - vim
+      - git
+      - tmux
+
+
+- name: "Configure hostname"
+  become: true
+  template:
+      src: hostname.j2
+      dest: /etc/hostname
+      owner: root
+      group: root
+      mode: 0644
+
+
+- name: "Configure network interfaces"
+  become: true
+  template:
+      src: interfaces.j2
+      dest: /etc/network/interfaces
+      owner: root
+      group: root
+      mode: 0644
+
+
+- name: "Ensure the credentials directory is present"
+  become: true
+  file: 
+      path: /root/credentials
+      state: directory
+      owner: root
+      group: root
+      mode: 0600
+  when: credentials is defined
+
+
+- name: "Make sure all domain credentials are there"
+  become: true
+  template:
+      src: credentials.j2
+      dest: "/root/credentials/{{ item.username }}"
+      owner: root
+      group: root
+      mode: 0400
+  with_items: "{{ credentials }}"
+  when: item is defined

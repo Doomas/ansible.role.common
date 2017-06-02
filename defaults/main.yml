@@ -1,0 +1,15 @@
+---
+# File:        roles/common/defaults/main.yml
+# Author:      Thomas Galliker
+# Author mail: mail@thomasgalliker.net
+# Created:     22.04.2017
+# Description: Default role variables.
+
+hostname: "{{ inventory_hostname }}"
+
+
+
+## DEPRECATED 22.04.2017
+hostname_fqdn: "{{ ansible_fqdn }}"
+hostname_name: "{{ hostname_fqdn.split('.').0 }}"
+ssh_user: "{{ ansible_ssh_user }}" 
