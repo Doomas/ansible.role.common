@@ -5,7 +5,18 @@
 # Created:     22.04.2017
 # Description: Default role variables.
 
-hostname: "{{ inventory_hostname }}"
+
+# SSH
+common_ssh_user: sysadmin
+
+# Packages
+common_default_packages:
+  - vim
+  - git
+  - tmux
+
+# hostname
+common_hostname: "{{ inventory_hostname }}"
 
 
 
