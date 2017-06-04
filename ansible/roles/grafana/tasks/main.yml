@@ -1,0 +1,29 @@
+---
+# File:        roles/grafana/tasks/main.yml
+# Created:     28.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Grafana configuration
+
+- name: "Ensure Grafana apt key is present"
+  become: yes
+  apt_key:
+      url: "https://packagecloud.io/gpg.key"
+      state: present
+
+
+- name: "Ensure Grafana source is present"
+  become: yes
+  apt_repository:
+      repo: "deb https://packagecloud.io/grafana/stable/debian/ jessie main"
+      state: present
+      filename: 'grafana'
+      update_cache: yes
+
+- name: "Ensure Grafana is installed"
+  become: yes
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+      - grafana
