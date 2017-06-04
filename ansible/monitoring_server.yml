@@ -12,4 +12,5 @@
     - postgresql
     - apache2
     - icinga2-web
+    - grafana
   tags: monitoring
