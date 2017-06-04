@@ -1,7 +1,0 @@
-#! /bin/bash
-
-# Standart configuration command
-
-source bin/vars
-
-$ANSIBLE_PLAYBOOK $1 --ask-become-pass

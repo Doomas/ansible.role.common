@@ -1,8 +1,0 @@
-====== 10.111.11.0/24 ======
-
----- datatable ----
-cols    : ip, %pageid%, legacyName, location
-headers : IP Adresse, Details, alter Name, Standort
-filter  : ip*~10.111.011.
-sort    : ip
-----

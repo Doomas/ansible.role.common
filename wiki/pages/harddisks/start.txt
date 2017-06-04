@@ -1,3 +1,0 @@
-====== Hardisks ======
-
-| hd-001 | Samsung HD103SJ | 1GB | Image esther \\ Images S+R Architektur( vor und nach windows 10 update) |

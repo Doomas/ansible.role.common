@@ -1,9 +1,0 @@
-====== Access Points: Lindenhof ======
-
-
----- datatable ----
-cols    : %pageid%, legacyName, location
-headers : Details, alter Name, Standort
-filter  : %pageid%*~ap-
-sort    : %pageid%
-----

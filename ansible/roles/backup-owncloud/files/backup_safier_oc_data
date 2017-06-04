@@ -1,6 +1,0 @@
-#!/bin/sh
-
-echo "RSNAPSHOT Safier Owncloud  $1"
-mount /media/backup && rsnapshot $1 || echo "Backup fehlgeschlagen"
-umount /media/backup
-echo
