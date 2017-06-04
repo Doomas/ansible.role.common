@@ -16,6 +16,8 @@
       - php5-imagick
       - php5-pgsql
       - php5-intl
+      - php5-curl
+      - libapache2-mod-wsgi
   notify:
       - restart apache2
 
@@ -30,3 +32,9 @@
       mode: 0644
   notify:
       - restart apache2
+
+
+- name: "enables the Apache2 module wsgi"
+  apache2_module:
+      state: present
+      name: wsgi
