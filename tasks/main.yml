@@ -6,6 +6,8 @@
 # Description: Common configurations for all hosts
 
 
+- include: bootstrap.yml
+
 - name: "Add the ssh key to the autorized keys for passwordless login"
   authorized_key: 
         user: "{{ common_ssh_username }}"
@@ -29,14 +31,7 @@
       group: root
       mode: 0644
 
-- name: "Configure network interfaces"
-  become: true
-  template:
-      src: interfaces.j2
-      dest: /etc/network/interfaces
-      owner: root
-      group: root
-      mode: 0644
+- include: interfaces.yml
 
 - include: mount.yml
   when: common_mount is defined
