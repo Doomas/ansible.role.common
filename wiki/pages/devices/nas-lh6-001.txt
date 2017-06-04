@@ -1,0 +1,14 @@
+====== nas-lh6-001 ======
+
+----dataentry device----
+model             : QNAP ???
+serialNumber      :
+user              :
+location          : LH6, OG 2
+operatingSystem   :
+ip                : 192.168.001.020
+mac               :
+legacyName        :
+----
+
+===== Protokoll =====
