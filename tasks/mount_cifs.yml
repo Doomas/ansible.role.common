@@ -1,0 +1,48 @@
+---
+# File:        tasks/mount_cifs.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Mount cifs shares
+
+
+- name: "Ensure the credentials directory is present"
+  become: true
+  file: 
+      path: /root/credentials
+      state: directory
+      owner: root
+      group: root
+      mode: 0600
+  when: common_mount.cifs.credentials is defined
+
+- name: "Make sure all domain credentials are there"
+  become: true
+  template:
+      src: credentials.j2
+      dest: "/root/credentials/{{ item.name }}"
+      owner: root
+      group: root
+      mode: 0400
+  with_items: "{{ common_mount.cifs.credentials | default([])  }}"
+  when: item is defined
+
+- name: "Make sure all cifs mountpoints are there"
+  become: true
+  file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 400
+  with_items: "{{ common_mount.cifs.mountpoints | default([]) }}"
+
+- name: "Make sure all cifs mountpoints are there"
+  become: true
+  mount:
+    name: "{{ item.path }}"
+    src: "{{ item.share_path }}"
+    fstype: cifs
+    opts: "{{ item.options }},credentials=/root/credentials/{{item.credentials}}"
+    state: present
+  with_items: "{{ common_mount.cifs.mountpoints | default([]) }}"

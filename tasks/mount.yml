@@ -1,0 +1,9 @@
+---
+# File:        tasks/mount.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Mount volumes and shares
+
+- include: mount_cifs.yml
+  when: common_mount.cifs is defined
