@@ -1,0 +1,12 @@
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet dhcp
+	
+	dns-nameserver 192.168.1.6
+	dns-search lan.schulemenziken.ch
