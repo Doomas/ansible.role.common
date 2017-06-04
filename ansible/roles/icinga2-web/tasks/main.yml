@@ -60,7 +60,7 @@
   notify:
     - restart icinga
 
-- name: "Enable pgsql conf"
+- name: "Enable icinga ido-pgsql"
   become: yes
   file:
       src: ../features-available/ido-pgsql.conf
