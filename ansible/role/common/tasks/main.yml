@@ -1,0 +1,42 @@
+---
+# File:        tasks/main.yml
+# Created:     16.04.2017
+# Author:      Thomas Galliker
+# Email:       mail@thomasgalliker.net
+# Description: Common configurations for all hosts
+
+
+- name: "Add the ssh key to the autorized keys for passwordless login"
+  authorized_key: 
+        user: "{{ common_ssh_username }}"
+        key: "{{ common_ssh_key }}"
+
+
+- name: "Ensure all needed packages are installed"
+  become: true
+  apt: 
+      name: "{{ item }}"
+      state: present
+  with_items: "{{ common_default_packages }} + {{ common_additional_packages | default([]) }}"
+
+
+- name: "Configure hostname"
+  become: true
+  template:
+      src: hostname.j2
+      dest: /etc/hostname
+      owner: root
+      group: root
+      mode: 0644
+
+- name: "Configure network interfaces"
+  become: true
+  template:
+      src: interfaces.j2
+      dest: /etc/network/interfaces
+      owner: root
+      group: root
+      mode: 0644
+
+- include: mount.yml
+  when: common_mount is defined
