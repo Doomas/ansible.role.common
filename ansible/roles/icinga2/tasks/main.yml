@@ -28,4 +28,33 @@
   with_items:
       - icinga2
       - nagios-plugins
-
+#      - graphite-web
+#      - graphite-carbon
+#
+#
+#- name: "Enable icinga feature: api"
+#  become: yes
+#  file:
+#      src: ../features-available/api.conf
+#      dest: /etc/icinga2/features-enabled/api.conf
+#      state: link
+#      owner: root
+#      group: root
+#      mode: 0644
+#  notify:
+#    - restart icinga
+#
+#- name: "Copy apache2 grpahite-web config"
+#  become: yes
+#  copy:
+#    src: graphite.conf
+#      dest: /etc/apache2/sites-available/graphite.conf
+#      owner: root
+#      group: root
+#      mode: 0644
+#
+#- name: "a2ensite graphite"
+#  become: yes
+#  command: a2ensite graphite
+#  args:
+#    creates: /etc/apache2/sites-enabled/graphite.conf
