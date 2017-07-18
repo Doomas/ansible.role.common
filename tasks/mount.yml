@@ -7,3 +7,6 @@
 
 - include: mount_cifs.yml
   when: common_mount.cifs is defined
+
+- include: mount_nfs.yml
+  when: common_mount.nfs is defined
